@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-1.11.3.min.js"></script>
+    <title>教练注册</title>
+    <style>
+        p
+        {
+            color: cadetblue;
+            text-align: center;
+            font-size: 40px;
+
+
+        }
+        #create
+        {
+            color: black;
+            text-align: center;
+
+        }
+    </style>
+    <script>
+        function checkName() {
+            $("#name").mouseout(function () {
+                var x = document.forms["info"]["name"].value;
+                if(x==null||x==""||x.length>5){
+                    this.innerHTML = "输入的名字格式不对哦!";
+                    //alert("wrong!");
+                }
+            });
+            }
+
+    </script>
+</head>
+<body>
+    <p>输入个人信息申请成为教练：</p>
+    <form  name="info" id="create" action="/coach/check/"  method="get">
+        <h5>姓名：<input id="name" onchange="checkName()" type="text" name="name"><br></h5>
+        <h5>性别：<input type="text" onchange="" name="sex"><br></h5>
+        <h5>出生年月：<input type="date" name="age"><br></h5>
+        <h5>教龄：<input type="number" name="time"><br></h5>
+        <h5>近照：<input type="image" name="photo"><br></h5>
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+</html>
